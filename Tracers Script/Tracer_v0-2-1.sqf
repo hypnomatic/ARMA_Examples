@@ -139,7 +139,7 @@ hyp_fnc_traceFireRemove = {
     private["_this","_unit"];
     _unit = _this select 0;
 
-    _unit removeEventHandler ["fired", (_unit setVariable ["hyp_var_tracer_eventHandle", 0])];
+    _unit removeEventHandler ["fired", (_unit getVariable ["hyp_var_tracer_eventHandle", 0])];
     {
         _unit setVariable [format["hyp_var_tracer_projectile_%1", _x], nil];
     } forEach (_unit getVariable ["hyp_var_tracer_activeIndexes", []]);
@@ -149,6 +149,6 @@ hyp_fnc_traceFireRemove = {
     _unit setVariable ["hyp_var_tracer_maxDistance", nil];
     _unit setVariable ["hyp_var_tracer_maxDuration", nil];
     _unit setVariable ["hyp_var_tracer_currentIndex", nil];
-    _unit setVariable ["hyp_var_tracer_activeIndexes", nil];
+    _unit setVariable ["hyp_var_tracer_activeIndexes", []];
     _unit setVariable ["hyp_var_tracer_eventHandle", nil];
 };
